@@ -1,0 +1,74 @@
+Ansible: 
+
+It is the automation engine taht allows for agentless system configuration and deploymnet. 
+
+Ansible operates on SSH and it is used to execute the commands, install softwares on remote or the local servers without any additional software but with just the basic ansible binary on the local. 
+
+$ cat /proc/cpuinfo
+
+install and configure ansible: 
+    $ sudo yum install ansible
+    $ sudo yum install git
+
+    $ vi etc/ansible/ansible.conf
+
+default inventory file is in here: $ /etc/ansible/hosts
+
+ad-hoc command example: 
+
+    $ ansible <hostname/hostgroup/hostip> -b -m <modulename> -a "name=<> value=<>"
+
+    -b is for executing the command on root (become) 
+    -m is for module name 
+    -a is for the arguments of module 
+
+playbooks:
+
+    $ ansible-playbook -i <custominventoryfile> <playbookname.yml>
+
+varibales: 
+
+    $ ansible-playbook -i <custominventoryfile> <playbookname.yml> -e "service_name=httpd"
+
+    either you can specify the varibale inside the playbook as below:
+
+        vars: 
+            service_name: httpd 
+        tasks: 
+            "{{ service_name }}"
+            ## use double quotes and double curly braces to call the variable. 
+
+ansible-facts: 
+
+    by default the gathering facts will be true (yes) 
+    
+    you can restrict the playbook to not gather the fscts by below syntax: 
+    
+        gather_facts: no
+
+    you can call the ansible_facts values directly in the playbook as the regular variable as below: 
+
+        tasks: 
+            "{{ ansible_hostname }}"
+
+debug: 
+
+    tasks: 
+        - debug: 
+            var: target_hosts
+
+        register: task_debug
+        - debug: 
+            msg: "output of the line: {{ task_debug }}"
+    
+handlers: 
+
+    handlers are similar to tasks but we can call handlers in different tasks as the module. 
+    
+        handlers: 
+            task syntax 
+            listen: "restart https"
+            
+        tasks: 
+            notify: 
+                - restart httpd
