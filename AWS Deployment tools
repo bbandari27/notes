@@ -1,0 +1,26 @@
+AWS : I do have experience on AWS from basic services to extended security and networking services as well. 
+
+In my past exp, I have worked on a wide range of services like ec2, vpc, s3, lambda, eks, ecs, ecr, cloud formation, Code suite (code commit, code build, code deploy and code pipeline). 
+
+I mostly worked on the deployment tools on AWS and different cloud platforms. 
+
+Cloud Formation: I have used cloudformation for Infrastructure as code and experienced most of the features in cloudformation like creating stack sets, nested stacks, drift detection, change sets etc. also good with cloudformation cli for validating the templates etc. 
+On the side note, I am also good at terraform. 
+
+EKS: I have worked on native kubernetes on data centers and also on AWS ec2 then we migrated the containerized applications to AWS EKS. I have managed and created the EKS cluster from scratch, deployed pods with different configurations, used an autoscaler inside the kubernetes, created a custom dashboard for eks for the application teams to monitor their pods and deployment easily. INstalled prometheus for the verbose monitoring. Used rolling deployment strategy for the applications to maintain the high availability of the applications. 
+Deployed 1000s of pods and deployments in each application. Created sidecar containers inside the pods to get the custom logs and integrated with the cloud watch, SNS to get the notifications and used custom lambda for the requirement where the EKS is not supported. Created managed node groups and maintained the cluster from our local workstation by configuring the kubectl. 
+
+ECS: I mostly worked on EKS but in my previous project when we worked on the native docker, i sued ecs a lot in AWS because the orchestration for the docker is pretty good in AWS ECS, creating task definitions, services and maintaining the high availability architecture with container instances attached to auto scaling. Used ECR to store the images for this task definitions and followed security best practices by launching the ecs clusters in private subnets and created the vpc endpoint to access the ecr. 
+
+ECR: We in our organization used ECR instead of Docker hub because of flexibility, ECR is way better than DOcker hub when it comes to security, additional permissions (IAM permissions) are needed to get/put/create./delete the images stored in the ECR. the additional authentication and as we are using entirely AWS services, ECR is better inside the AWS. 
+
+
+Code Pipeline: I have experience on the jenkins, bamboo, circle CI and also Code suite. Out of all this, I am good at Code pipelines and jenkins. 
+In the code pipeline, We have created the end to end automated CIDC pielnes, I used code commits for the source like git, bitbucket. Even though I used the code commit, the best thing is we can use the same gitli to manage the branches, repos etc. 
+Then We used code build for the continuous build and then for testing, we deploy the code in the stage and dev environments, after the aggressive testing , usually for customer faced application, we used to add the manual approval stage which is optional and can be added in the code pipeline, then after everything looks good same version will be deployed to the production deployment. 
+I have also created the code pipelines with multiple accounts (crossaccont access) and with the branching strategies like if the branch is main then it will be deployed to production or else, it will just sit in the development for testing purpose. 
+
+Code Deploy: I have used code deploy for ECS, ec2 and the lambda but not the EKS as it is not supported at this point. AWS said that it is a feature request but still it might take time. I usually use COde build for continuous deployment when we are deploying to the AWS EKS Clusters. 
+I used to write the aws kubectl commands in the build.spec file and then launch as the deploy stage.
+
+With AWS, I also used Ansible for configuration management and also the external monitoring tools like splunk , datadog etc. 
